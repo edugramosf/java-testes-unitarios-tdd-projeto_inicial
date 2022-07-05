@@ -2,9 +2,7 @@ package br.com.alura.tdd.service;
 
 import br.com.alura.tdd.modelo.Desempenho;
 import br.com.alura.tdd.modelo.Funcionario;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -18,9 +16,26 @@ public class ReajusteServiceTest {
 
     @BeforeEach
     public void inicializar() {
+        System.out.println("Inicializando");
         this.service = new ReajusteService();
         this.funcionario = new Funcionario("Ana", LocalDate.now(), new BigDecimal("1000"));
     }
+
+    @AfterEach
+    public void finalizar() {
+        System.out.println("Fim");
+    }
+
+    @BeforeAll
+    public static void antesDeTodo() {
+        System.out.println("ANTES DE TODOS");
+    }
+
+    @AfterAll
+    public static void depoisDeTodos() {
+        System.out.println("DEPOIS DE TODOS");
+    }
+
 
     @Test
     public void reajusteDeveriaSerDeTresPorCentoQuandoDesempenhoForADesejar() {
