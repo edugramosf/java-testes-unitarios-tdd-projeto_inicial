@@ -16,7 +16,7 @@ public class ReajusteServiceTest {
 
     @BeforeEach
     public void inicializar() {
-        System.out.println("Inicializando");
+        System.out.println("Iniciando");
         this.service = new ReajusteService();
         this.funcionario = new Funcionario("Ana", LocalDate.now(), new BigDecimal("1000"));
     }
@@ -35,7 +35,6 @@ public class ReajusteServiceTest {
     public static void depoisDeTodos() {
         System.out.println("DEPOIS DE TODOS");
     }
-
 
     @Test
     public void reajusteDeveriaSerDeTresPorCentoQuandoDesempenhoForADesejar() {
